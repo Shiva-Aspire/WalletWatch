@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalletWatch - Personal Finance Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👛 WalletWatch</h1>
+        <p class="text-center text-muted mb-4">Track your monthly income and expenses with interactive charts</p>
+        
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="data-tab" data-bs-toggle="tab" href="#data" role="tab" aria-controls="data" aria-selected="true">📊 Data Entry</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="chart-tab" data-bs-toggle="tab" href="#chart" role="tab" aria-controls="chart" aria-selected="false">📈 Chart View</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="data-tab">
+                <h2>Income and Expense Inputs</h2>
+                <form id="income-expense-form">
+                    <div class="row">
+                        <div class="col">
+                            <h3>💰 Income</h3>
+                            <input type="number" class="form-control" placeholder="Income for January" id="income-jan" min="0" step="0.01" value="85">
+                            <input type="number" class="form-control" placeholder="Income for February" id="income-feb" min="0" step="0.01" value="78">
+                            <input type="number" class="form-control" placeholder="Income for March" id="income-mar" min="0" step="0.01" value="92">
+                            <input type="number" class="form-control" placeholder="Income for April" id="income-apr" min="0" step="0.01" value="67">
+                            <input type="number" class="form-control" placeholder="Income for May" id="income-may" min="0" step="0.01" value="89">
+                            <input type="number" class="form-control" placeholder="Income for June" id="income-jun" min="0" step="0.01" value="73">
+                            <input type="number" class="form-control" placeholder="Income for July" id="income-jul" min="0" step="0.01" value="95">
+                            <input type="number" class="form-control" placeholder="Income for August" id="income-aug" min="0" step="0.01" value="81">
+                            <input type="number" class="form-control" placeholder="Income for September" id="income-sep" min="0" step="0.01" value="76">
+                            <input type="number" class="form-control" placeholder="Income for October" id="income-oct" min="0" step="0.01" value="88">
+                            <input type="number" class="form-control" placeholder="Income for November" id="income-nov" min="0" step="0.01" value="64">
+                            <input type="number" class="form-control" placeholder="Income for December" id="income-dec" min="0" step="0.01" value="91">
+                        </div>
+                        <div class="col">
+                            <h3>💸 Expenses</h3>
+                            <input type="number" class="form-control" placeholder="Expenses for January" id="expense-jan" min="0" step="0.01" value="72">
+                            <input type="number" class="form-control" placeholder="Expenses for February" id="expense-feb" min="0" step="0.01" value="58">
+                            <input type="number" class="form-control" placeholder="Expenses for March" id="expense-mar" min="0" step="0.01" value="86">
+                            <input type="number" class="form-control" placeholder="Expenses for April" id="expense-apr" min="0" step="0.01" value="63">
+                            <input type="number" class="form-control" placeholder="Expenses for May" id="expense-may" min="0" step="0.01" value="79">
+                            <input type="number" class="form-control" placeholder="Expenses for June" id="expense-jun" min="0" step="0.01" value="54">
+                            <input type="number" class="form-control" placeholder="Expenses for July" id="expense-jul" min="0" step="0.01" value="97">
+                            <input type="number" class="form-control" placeholder="Expenses for August" id="expense-aug" min="0" step="0.01" value="69">
+                            <input type="number" class="form-control" placeholder="Expenses for September" id="expense-sep" min="0" step="0.01" value="82">
+                            <input type="number" class="form-control" placeholder="Expenses for October" id="expense-oct" min="0" step="0.01" value="75">
+                            <input type="number" class="form-control" placeholder="Expenses for November" id="expense-nov" min="0" step="0.01" value="61">
+                            <input type="number" class="form-control" placeholder="Expenses for December" id="expense-dec" min="0" step="0.01" value="84">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-lg mt-3" id="submit-data">📊 Update Chart</button>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="chart" role="tabpanel" aria-labelledby="chart-tab">
+                <h2>📈 Income and Expense Chart</h2>
+                <div class="chart-container">
+                    <canvas id="income-expense-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+ 
